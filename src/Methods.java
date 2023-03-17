@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class Methods {
-    public void checkLeapYear(int year) {
+    public static void checkLeapYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
             System.out.println(year + " високосный год");
         } else {
@@ -10,7 +10,7 @@ public class Methods {
         System.out.println();
     }
 
-    public void checkYear(byte device, int releaseYearDevice) {
+    public static void checkYear(byte device, int releaseYearDevice) {
         int currentYear = LocalDate.now().getYear();
         byte ios = 0;
         byte android = 1;
@@ -32,7 +32,7 @@ public class Methods {
         System.out.println();
     }
 
-    public void cardDeliveryTime(int distance) {
+    public static int cardDeliveryTime(int distance) {
         int distanceMax = 100;
         int distanceMin = 0;
         int daysForDelivery = 1;
@@ -41,11 +41,9 @@ public class Methods {
                 daysForDelivery++;
             }
             System.out.println("Потребуется дней: " + daysForDelivery);
-        } else if (distance > distanceMax) {
-            System.out.println("Доставка свыше " + distanceMax + " км не предусмотрена");
-        } else {
-            System.out.println("Данные ввели некорректно");
+            return daysForDelivery;
         }
         System.out.println();
+        return -1;
     }
 }
