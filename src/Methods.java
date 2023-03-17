@@ -14,7 +14,7 @@ public class Methods {
         int currentYear = LocalDate.now().getYear();
         byte ios = 0;
         byte android = 1;
-        if (device == ios) {
+        if (device == ios)  {
             if (releaseYearDevice < currentYear) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             } else {
